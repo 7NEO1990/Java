@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Car> cars = new ArrayList<Car>(); // creates an ArrayList of Car objects, dynamic in size
+        
+        System.out.println("Enter car models (type 'exit' to finish):");
+
+        while (true) {
+            System.out.print("Enter car model: ");
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("exit")) {
+                break;
+            }
+
+            cars.add(new Car(input));
+        }
+
+        // Print the remaining cars
+        System.out.println("Cars in the list:");
+        for (Car car : cars) {
+            System.out.println(car);
+        }
+
+        scanner.close();
+    }
+}
